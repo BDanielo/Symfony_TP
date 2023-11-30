@@ -1,0 +1,18 @@
+{# templates/Backend/Auteur/update.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Modifier un Auteur
+{% endblock %}
+
+{% block body %}
+    <h1>Modifier un Auteur</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+
+    <button type="submit" class="btn btn-primary mt-3">Modifier</button>
+    <a href="{{ path('admin.auteurs.index') }}" class="btn btn-secondary mt-3">Retour</a>
+    {{ form_end(form) }}
+{% endblock %}

@@ -252,6 +252,6 @@ class __TwigTemplate_cb250b519c906be7fde4516bb3489e90 extends Template
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/exception.html.twig", "/home/danielo/Documents/dev/TpNote/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
+", "@WebProfiler/Collector/exception.html.twig", "/home/danielo/Documents/dev/GitTpNote/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
     }
 }

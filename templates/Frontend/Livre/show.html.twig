@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ livre.titre }} | {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <section class="container mt-4">
+        <div class="row">
+            <aside class="col-md-4">
+                <h2>Informations:</h2>
+                <p>
+                    <strong>Date de publication:</strong>
+                    {{ livre.datePublication|format_datetime('full', 'none') }}
+                </p>
+                <p>
+                    <strong>Auteur:</strong>
+                    {{ livre.auteur.nom }} {{ livre.auteur.prenom }}
+                </p>
+                {% if livre.categories|length > 0 %}
+                    <h2>Catégories:</h2>
+                    <ul>
+                        {% for categorie in livre.categories %}
+                            <!-- Ajout du lien pour chaque catégorie -->
+                            <span class="badge bg-secondary p-2">
+                                <a href="{{ path('app.categories.show', {id: categorie.id}) }}">{{ categorie.nom }}</a>
+                            </span>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </aside>
+            <article class="col-md-8">
+                <h1>{{ livre.titre }}</h1>
+                {{ livre.description|raw }}
+            </article>
+        </div>
+    </section>
+{% endblock %}

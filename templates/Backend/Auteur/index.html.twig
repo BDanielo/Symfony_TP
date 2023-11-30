@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Admin des auteurs | {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <section class="container mt-4">
+        <h1 class="text-center">Administration des auteurs</h1>
+        <a href="{{ path('admin.auteurs.create') }}" class="btn btn-primary">Créer un auteur</a>
+        <div class="auteur-list mt-4">
+            {% for auteur in auteurs %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ auteur.nom }} {{ auteur.prenom }}</h5>
+                        <p class="card-text">
+                            <strong>Date de naissance:</strong> {{ auteur.dateNaissance|date('d/m/Y') }}
+                        </p>
+                        <!-- Add more details as needed -->
+                        <a href="{{ path('admin.auteurs.update', {'id': auteur.id}) }}" class="btn btn-info">Modifier</a>
+                        <form action="{{ path('admin.auteurs.delete', {'id': auteur.id}) }}" method="post" class="d-inline">
+                            <input type="hidden" name="token" value="{{ csrf_token('delete' ~ auteur.id) }}">
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Voulez-vous vraiment supprimer cet auteur ?')">Supprimer</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

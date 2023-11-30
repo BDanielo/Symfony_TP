@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Liste des auteurs | {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <section class="container mt-4">
+        <h1 class="text-center">Liste des auteurs</h1>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <ul class="list-group mt-4">
+                    {% for auteur in auteurs %}
+                        <li class="list-group-item">
+                            <a href="{{ path('app.auteurs.show', {'id': auteur.id}) }}">
+                                {{ auteur.nom }} {{ auteur.prenom }}
+                            </a>
+                        </li>
+                    {% else %}
+                        <p class="text-muted">Aucun auteur trouvé.</p>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

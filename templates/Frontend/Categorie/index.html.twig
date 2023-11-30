@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Liste des catégories | {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <section class="container mt-4">
+        <h1 class="text-center">Liste des catégories</h1>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <ul class="list-group mt-4">
+                    {% for categorie in categories %}
+                        <li class="list-group-item">
+                            <a href="{{ path('app.categories.show', {'id': categorie.id}) }}">
+                                {{ categorie.nom }}
+                            </a>
+                        </li>
+                    {% else %}
+                        <p class="text-muted">Aucune catégorie trouvée.</p>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

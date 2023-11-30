@@ -45,4 +45,15 @@ class LivreRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+// Récupére les derniers livres avec une limite
+    public function findLatestWithLimit(int $limit): array
+    {
+        return $this->createQueryBuilder('l')
+            ->orderBy('l.dateCreation', 'DESC')
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

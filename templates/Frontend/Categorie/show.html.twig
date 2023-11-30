@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Détails de la catégorie {{ categorie.nom }} | {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <section class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="text-center">{{ categorie.nom }}</h1>
+                <p><strong>Description :</strong> {{ categorie.description }}</p>
+
+                {% if categorie.livres is not empty %}
+                    <h2 class="mt-4">Livres associés à cette catégorie :</h2>
+                    <ul class="list-group">
+                        {% for livre in categorie.livres %}
+                            <!-- Ajout du lien pour chaque livre -->
+                            <li class="list-group-item">
+                                <a href="{{ path('app.livres.show', {id: livre.id}) }}">{{ livre.titre }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="text-muted">Aucun livre associé à cette catégorie.</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

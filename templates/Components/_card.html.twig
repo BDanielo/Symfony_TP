@@ -1,0 +1,31 @@
+<div class="blog-card">
+    <div class="blog-card-content">
+        <p class="blog-card-content-date">
+            <i class="bi bi-calendar-range-fill"></i>
+            {{ livre.datePublication|format_datetime('full', 'none') }}
+        </p>
+        <a href="{{ path('app.livres.show', {id: livre.id}) }}">
+            <h2 class="blog-card-content-header">{{ livre.titre }}</h2>
+        </a>
+        <p class="blog-card-content-text">{{ livre.description|striptags|slice(0, 150) ~ '...' }}</p>
+        <!-- Assuming Livre entity has an author property -->
+        <p class="blog-card-content-user text-muted">Par {{ livre.auteur.nomComplet }}</p>
+        <div class="mb-3">
+            {% for categorie in livre.categories %}
+                <!-- Ajout du lien pour chaque catégorie -->
+                <span class="badge bg-secondary p-2">
+                                <a href="{{ path('app.categories.show', {id: categorie.id}) }}">{{ categorie.nom }}</a>
+                            </span>
+            {% endfor %}
+        </div>
+        {% if app.request.get('_route') == 'admin.livres.index' %}
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="{{ path('admin.livres.update', {id: livre.id}) }}" class="btn btn-warning">
+                    <i class="bi bi-pencil-square"></i>
+                    Modifier
+                </a>
+{#                {% include 'Backend/Livre/_deleteForm.html.twig' %}#}
+            </div>
+        {% endif %}
+    </div>
+</div>

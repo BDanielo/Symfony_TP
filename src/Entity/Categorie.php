@@ -19,11 +19,20 @@ class Categorie
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank]
-    #[Assert\Length(min: 4)]
+    #[Assert\Length(
+        min: 4,
+        max: 255,
+        minMessage: 'Le nom doit faire au moins {{ limit }} caractères',
+        maxMessage: 'Le nom doit faire moins de {{ limit }} caractères'
+    )]
     private ?string $nom = null;
 
     #[ORM\Column(type: Types::TEXT)]
     #[Assert\NotBlank]
+    #[Assert\Length(
+        min: 10,
+        minMessage: 'La description doit faire au moins {{ limit }} caractères',
+    )]
     private ?string $description = null;
 
     #[ORM\ManyToMany(targetEntity: Livre::class, mappedBy: 'Categories')]

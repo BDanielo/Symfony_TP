@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Détails de l'auteur {{ auteur.nom }} {{ auteur.prenom }} | {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <section class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="text-center">{{ auteur.nom }} {{ auteur.prenom }}</h1>
+                <p><strong>Date de naissance :</strong> {{ auteur.dateNaissance|date('Y-m-d') }}</p>
+                {% if auteur.livres is not empty %}
+                    <h2>Livres écrits :</h2>
+                    <ul>
+                        {% for livre in auteur.livres %}
+                            <!-- Ajout du lien pour chaque livre -->
+                            <li>
+                                <a href="{{ path('app.livres.show', {id: livre.id}) }}">{{ livre.titre }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

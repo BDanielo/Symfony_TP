@@ -1,18 +1,48 @@
+"use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["app"],{
 
 /***/ "./assets/app.js":
 /*!***********************!*\
   !*** ./assets/app.js ***!
   \***********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: Cannot find module 'fs/promises'\nRequire stack:\n- /home/danielo/Documents/dev/TpNote/node_modules/babel-loader/lib/cache.js\n- /home/danielo/Documents/dev/TpNote/node_modules/babel-loader/lib/index.js\n- /home/danielo/Documents/dev/TpNote/node_modules/loader-runner/lib/loadLoader.js\n- /home/danielo/Documents/dev/TpNote/node_modules/loader-runner/lib/LoaderRunner.js\n- /home/danielo/Documents/dev/TpNote/node_modules/webpack/lib/NormalModule.js\n- /home/danielo/Documents/dev/TpNote/node_modules/@symfony/webpack-encore/lib/webpack-manifest-plugin/index.js\n- /home/danielo/Documents/dev/TpNote/node_modules/@symfony/webpack-encore/lib/plugins/manifest.js\n- /home/danielo/Documents/dev/TpNote/node_modules/@symfony/webpack-encore/lib/config-generator.js\n- /home/danielo/Documents/dev/TpNote/node_modules/@symfony/webpack-encore/index.js\n- /home/danielo/Documents/dev/TpNote/webpack.config.js\n- /home/danielo/Documents/dev/TpNote/node_modules/webpack-cli/lib/webpack-cli.js\n- /home/danielo/Documents/dev/TpNote/node_modules/webpack-cli/lib/bootstrap.js\n- /home/danielo/Documents/dev/TpNote/node_modules/webpack-cli/bin/cli.js\n- /home/danielo/Documents/dev/TpNote/node_modules/webpack/bin/webpack.js\n- /home/danielo/Documents/dev/TpNote/node_modules/@symfony/webpack-encore/bin/encore.js\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:815:15)\n    at Function.Module._load (internal/modules/cjs/loader.js:667:27)\n    at Module.require (internal/modules/cjs/loader.js:887:19)\n    at require (internal/modules/cjs/helpers.js:74:18)\n    at Object.<anonymous> (/home/danielo/Documents/dev/TpNote/node_modules/babel-loader/lib/cache.js:21:5)\n    at Module._compile (internal/modules/cjs/loader.js:999:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)\n    at Module.load (internal/modules/cjs/loader.js:863:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:708:14)\n    at Module.require (internal/modules/cjs/loader.js:887:19)\n    at require (internal/modules/cjs/helpers.js:74:18)\n    at Object.<anonymous> (/home/danielo/Documents/dev/TpNote/node_modules/babel-loader/lib/index.js:19:15)\n    at Module._compile (internal/modules/cjs/loader.js:999:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)\n    at Module.load (internal/modules/cjs/loader.js:863:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:708:14)\n    at Module.require (internal/modules/cjs/loader.js:887:19)\n    at require (internal/modules/cjs/helpers.js:74:18)\n    at loadLoader (/home/danielo/Documents/dev/TpNote/node_modules/loader-runner/lib/loadLoader.js:19:17)\n    at iteratePitchingLoaders (/home/danielo/Documents/dev/TpNote/node_modules/loader-runner/lib/LoaderRunner.js:182:2)\n    at runLoaders (/home/danielo/Documents/dev/TpNote/node_modules/loader-runner/lib/LoaderRunner.js:398:2)\n    at NormalModule._doBuild (/home/danielo/Documents/dev/TpNote/node_modules/webpack/lib/NormalModule.js:825:3)\n    at NormalModule.build (/home/danielo/Documents/dev/TpNote/node_modules/webpack/lib/NormalModule.js:969:15)\n    at /home/danielo/Documents/dev/TpNote/node_modules/webpack/lib/Compilation.js:1377:12\n    at NormalModule.needBuild (/home/danielo/Documents/dev/TpNote/node_modules/webpack/lib/NormalModule.js:1257:32)\n    at Compilation._buildModule (/home/danielo/Documents/dev/TpNote/node_modules/webpack/lib/Compilation.js:1358:10)\n    at /home/danielo/Documents/dev/TpNote/node_modules/webpack/lib/util/AsyncQueue.js:305:10\n    at Hook.eval [as callAsync] (eval at create (/home/danielo/Documents/dev/TpNote/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:4:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/home/danielo/Documents/dev/TpNote/node_modules/tapable/lib/Hook.js:18:14)\n    at AsyncQueue._startProcessing (/home/danielo/Documents/dev/TpNote/node_modules/webpack/lib/util/AsyncQueue.js:295:26)\n    at AsyncQueue._ensureProcessing (/home/danielo/Documents/dev/TpNote/node_modules/webpack/lib/util/AsyncQueue.js:282:12)\n    at processImmediate (internal/timers.js:461:21)");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _styles_app_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/app.scss */ "./assets/styles/app.scss");
+/*
+ * Welcome to your app's main JavaScript file!
+ *
+ * We recommend including the built version of this JavaScript file
+ * (and its CSS file) in your base layout (base.html.twig).
+ */
+
+// any CSS you import will output into a single css file (app.css in this case)
+
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+__webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
+$(document).ready(function () {
+  $('[data-toggle="popover"]').popover();
+});
+
+/***/ }),
+
+/***/ "./assets/styles/app.scss":
+/*!********************************!*\
+  !*** ./assets/styles/app.scss ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ })
 
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ var __webpack_exports__ = (__webpack_exec__("./assets/app.js"));
+/******/ __webpack_require__.O(0, ["vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_jquery_dist_jquery_js-no-6ccba5"], () => (__webpack_exec__("./assets/app.js")));
+/******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBO0FBQzJCO0FBQzNCLElBQU1BLENBQUMsR0FBR0MsbUJBQU8sQ0FBQyxvREFBUSxDQUFDO0FBQzNCQSxtQkFBTyxDQUFDLG9FQUFXLENBQUM7QUFHcEJELENBQUMsQ0FBQ0UsUUFBUSxDQUFDLENBQUNDLEtBQUssQ0FBQyxZQUFXO0VBQ3pCSCxDQUFDLENBQUMseUJBQXlCLENBQUMsQ0FBQ0ksT0FBTyxDQUFDLENBQUM7QUFDMUMsQ0FBQyxDQUFDOzs7Ozs7Ozs7OztBQ2ZGIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vYXNzZXRzL2FwcC5qcyIsIndlYnBhY2s6Ly8vLi9hc3NldHMvc3R5bGVzL2FwcC5zY3NzPzhmNTkiXSwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIFdlbGNvbWUgdG8geW91ciBhcHAncyBtYWluIEphdmFTY3JpcHQgZmlsZSFcbiAqXG4gKiBXZSByZWNvbW1lbmQgaW5jbHVkaW5nIHRoZSBidWlsdCB2ZXJzaW9uIG9mIHRoaXMgSmF2YVNjcmlwdCBmaWxlXG4gKiAoYW5kIGl0cyBDU1MgZmlsZSkgaW4geW91ciBiYXNlIGxheW91dCAoYmFzZS5odG1sLnR3aWcpLlxuICovXG5cbi8vIGFueSBDU1MgeW91IGltcG9ydCB3aWxsIG91dHB1dCBpbnRvIGEgc2luZ2xlIGNzcyBmaWxlIChhcHAuY3NzIGluIHRoaXMgY2FzZSlcbmltcG9ydCAnLi9zdHlsZXMvYXBwLnNjc3MnO1xuY29uc3QgJCA9IHJlcXVpcmUoJ2pxdWVyeScpO1xucmVxdWlyZSgnYm9vdHN0cmFwJyk7XG5cblxuJChkb2N1bWVudCkucmVhZHkoZnVuY3Rpb24oKSB7XG4gICAgJCgnW2RhdGEtdG9nZ2xlPVwicG9wb3ZlclwiXScpLnBvcG92ZXIoKTtcbn0pOyIsIi8vIGV4dHJhY3RlZCBieSBtaW5pLWNzcy1leHRyYWN0LXBsdWdpblxuZXhwb3J0IHt9OyJdLCJuYW1lcyI6WyIkIiwicmVxdWlyZSIsImRvY3VtZW50IiwicmVhZHkiLCJwb3BvdmVyIl0sInNvdXJjZVJvb3QiOiIifQ==

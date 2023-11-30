@@ -1007,3 +1007,8 @@ adde6e,127.0.0.1,POST,https://127.0.0.1:8000/admin/auteurs/create,1701344237,,30
 2a69a8,127.0.0.1,GET,https://127.0.0.1:8000/admin/auteurs,1701344237,,200,request
 48d70a,127.0.0.1,POST,https://127.0.0.1:8000/admin/auteurs/2/delete,1701344239,,302,request
 fc9d2e,127.0.0.1,GET,https://127.0.0.1:8000/admin/auteurs,1701344239,,200,request
+e05ae0,127.0.0.1,GET,https://127.0.0.1:8000/admin/livres,1701344617,,200,request
+2b34c6,127.0.0.1,GET,https://127.0.0.1:8000/build/fonts/bootstrap-icons.dea24bf5.woff2,1701344617,d5114f,404,request
+d5114f,127.0.0.1,GET,https://127.0.0.1:8000/build/fonts/bootstrap-icons.dea24bf5.woff2,1701344617,,404,request
+0dc356,127.0.0.1,GET,https://127.0.0.1:8000/build/fonts/bootstrap-icons.449ad8ad.woff,1701344617,affe40,404,request
+affe40,127.0.0.1,GET,https://127.0.0.1:8000/build/fonts/bootstrap-icons.449ad8ad.woff,1701344617,,404,request

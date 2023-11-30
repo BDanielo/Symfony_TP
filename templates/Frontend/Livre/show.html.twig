@@ -11,7 +11,7 @@
                 <h2>Informations:</h2>
                 <p>
                     <strong>Date de publication:</strong>
-                    {{ livre.datePublication|format_datetime('full', 'none') }}
+                    {{ livre.datePublication|format_datetime('full', 'none', locale='fr') }}
                 </p>
                 <p>
                     <strong>Auteur:</strong>

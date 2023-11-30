@@ -99,7 +99,7 @@ class __TwigTemplate_68a1bbe9cdc95c5e135538da5c7f9e2a extends Template
                     <strong>Date de publication:</strong>
                     ";
         // line 14
-        echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["livre"]) || array_key_exists("livre", $context) ? $context["livre"] : (function () { throw new RuntimeError('Variable "livre" does not exist.', 14, $this->source); })()), "datePublication", [], "any", false, false, false, 14), "full", "none"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["livre"]) || array_key_exists("livre", $context) ? $context["livre"] : (function () { throw new RuntimeError('Variable "livre" does not exist.', 14, $this->source); })()), "datePublication", [], "any", false, false, false, 14), "full", "none", "", null, "gregorian", "fr"), "html", null, true);
         echo "
                 </p>
                 <p>
@@ -203,7 +203,7 @@ class __TwigTemplate_68a1bbe9cdc95c5e135538da5c7f9e2a extends Template
                 <h2>Informations:</h2>
                 <p>
                     <strong>Date de publication:</strong>
-                    {{ livre.datePublication|format_datetime('full', 'none') }}
+                    {{ livre.datePublication|format_datetime('full', 'none', locale='fr') }}
                 </p>
                 <p>
                     <strong>Auteur:</strong>

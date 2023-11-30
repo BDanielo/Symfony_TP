@@ -95,74 +95,43 @@ class __TwigTemplate_0043a7fac413140aa83b8eca41591770 extends Template
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.livres.create");
         echo "\" class=\"btn btn-primary\">Créer un livre</a>
-        <div class=\"livre-card-list mt-4\">
+        <div class=\"blog-card-list mt-4\">
             ";
         // line 12
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["livres"]) || array_key_exists("livres", $context) ? $context["livres"] : (function () { throw new RuntimeError('Variable "livres" does not exist.', 12, $this->source); })()));
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
         foreach ($context['_seq'] as $context["_key"] => $context["livre"]) {
             // line 13
             echo "                ";
+            $this->loadTemplate("Components/_card.html.twig", "Backend/Livre/index.html.twig", 13)->display($context);
             // line 14
-            echo "                <div class=\"card mb-3\">
-                    <div class=\"card-body\">
-                        <h5 class=\"card-title\">";
-            // line 16
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "titre", [], "any", false, false, false, 16), "html", null, true);
-            echo "</h5>
-                        <p class=\"text-muted\">Par ";
-            // line 17
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["livre"], "auteur", [], "any", false, false, false, 17), "nomComplet", [], "any", false, false, false, 17), "html", null, true);
-            echo "</p>
-                        <p class=\"card-text\">";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["livre"], "description", [], "any", false, false, false, 18), "html", null, true);
-            echo "</p>
-                        <div class=\"mb-3\">
-                        ";
-            // line 20
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["livre"], "categories", [], "any", false, false, false, 20));
-            foreach ($context['_seq'] as $context["_key"] => $context["categorie"]) {
-                // line 21
-                echo "                            <!-- Ajout du lien pour chaque catégorie -->
-                            <span class=\"badge bg-secondary p-2\">
-                                <a href=\"";
-                // line 23
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app.categories.show", ["id" => twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 23)]), "html", null, true);
-                echo "\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 23), "html", null, true);
-                echo "</a>
-                            </span>
-                        ";
+            echo "            ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
             }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['categorie'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 26
-            echo "                        </div>
-                        <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.livres.update", ["id" => twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-            echo "\" class=\"btn btn-info\">Modifier</a>
-                        <form action=\"";
-            // line 28
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.livres.delete", ["id" => twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 28)]), "html", null, true);
-            echo "\" method=\"post\" class=\"d-inline\">
-                            <input type=\"hidden\" name=\"token\" value=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["livre"], "id", [], "any", false, false, false, 29))), "html", null, true);
-            echo "\">
-                            <button type=\"submit\" class=\"btn btn-danger\" onclick=\"return confirm('Voulez-vous vraiment supprimer ce livre ?')\">Supprimer</button>
-                        </form>
-                    </div>
-                </div>
-            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['livre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 15
         echo "        </div>
     </section>
 ";
@@ -195,7 +164,7 @@ class __TwigTemplate_0043a7fac413140aa83b8eca41591770 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  166 => 35,  154 => 29,  150 => 28,  146 => 27,  143 => 26,  132 => 23,  128 => 21,  124 => 20,  119 => 18,  115 => 17,  111 => 16,  107 => 14,  105 => 13,  101 => 12,  96 => 10,  92 => 8,  82 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  135 => 15,  121 => 14,  118 => 13,  101 => 12,  96 => 10,  92 => 8,  82 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -210,29 +179,9 @@ class __TwigTemplate_0043a7fac413140aa83b8eca41591770 extends Template
     <section class=\"container mt-4\">
         <h1 class=\"text-center\">Administration des livres</h1>
         <a href=\"{{ path('admin.livres.create') }}\" class=\"btn btn-primary\">Créer un livre</a>
-        <div class=\"livre-card-list mt-4\">
+        <div class=\"blog-card-list mt-4\">
             {% for livre in livres %}
-                {# Customize the card display based on Livre properties #}
-                <div class=\"card mb-3\">
-                    <div class=\"card-body\">
-                        <h5 class=\"card-title\">{{ livre.titre }}</h5>
-                        <p class=\"text-muted\">Par {{ livre.auteur.nomComplet }}</p>
-                        <p class=\"card-text\">{{ livre.description }}</p>
-                        <div class=\"mb-3\">
-                        {% for categorie in livre.categories %}
-                            <!-- Ajout du lien pour chaque catégorie -->
-                            <span class=\"badge bg-secondary p-2\">
-                                <a href=\"{{ path('app.categories.show', {id: categorie.id}) }}\">{{ categorie.nom }}</a>
-                            </span>
-                        {% endfor %}
-                        </div>
-                        <a href=\"{{ path('admin.livres.update', {'id': livre.id}) }}\" class=\"btn btn-info\">Modifier</a>
-                        <form action=\"{{ path('admin.livres.delete', {'id': livre.id}) }}\" method=\"post\" class=\"d-inline\">
-                            <input type=\"hidden\" name=\"token\" value=\"{{ csrf_token('delete' ~ livre.id) }}\">
-                            <button type=\"submit\" class=\"btn btn-danger\" onclick=\"return confirm('Voulez-vous vraiment supprimer ce livre ?')\">Supprimer</button>
-                        </form>
-                    </div>
-                </div>
+                {% include 'Components/_card.html.twig' %}
             {% endfor %}
         </div>
     </section>

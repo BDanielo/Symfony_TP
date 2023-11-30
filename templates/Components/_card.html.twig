@@ -2,7 +2,7 @@
     <div class="blog-card-content">
         <p class="blog-card-content-date">
             <i class="bi bi-calendar-range-fill"></i>
-            {{ livre.datePublication|format_datetime('full', 'none') }}
+            {{ livre.datePublication|format_datetime('full', 'none', locale='fr') }}
         </p>
         <a href="{{ path('app.livres.show', {id: livre.id}) }}">
             <h2 class="blog-card-content-header">{{ livre.titre }}</h2>
@@ -14,8 +14,12 @@
             {% for categorie in livre.categories %}
                 <!-- Ajout du lien pour chaque catégorie -->
                 <span class="badge bg-secondary p-2">
+                            {% if app.request.get('_route') == 'admin.livres.index' %}
+                                <a href="{{ path('admin.categories.update', {id: categorie.id}) }}">{{ categorie.nom }}</a>
+                            {% else %}
                                 <a href="{{ path('app.categories.show', {id: categorie.id}) }}">{{ categorie.nom }}</a>
-                            </span>
+                            {% endif %}
+                </span>
             {% endfor %}
         </div>
         {% if app.request.get('_route') == 'admin.livres.index' %}
@@ -24,8 +28,9 @@
                     <i class="bi bi-pencil-square"></i>
                     Modifier
                 </a>
-{#                {% include 'Backend/Livre/_deleteForm.html.twig' %}#}
+                {% include 'Backend/Livre/_deleteForm.html.twig' %}
             </div>
+
         {% endif %}
     </div>
 </div>

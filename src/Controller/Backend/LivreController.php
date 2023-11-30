@@ -100,6 +100,12 @@ class LivreController extends AbstractController
     #[Route('/{id}/delete', name: '.delete', methods: ['POST'])]
     public function delete(?Livre $livre, Request $request): RedirectResponse
     {
+        // Vérifie si le token CSRF est valide, sinon redirige avec un message d'erreur
+        if (!$this->isCsrfTokenValid('delete' . $livre->getId(), $request->request->get('token'))) {
+            $this->addFlash('error', 'Jeton CSRF invalide');
+            return $this->redirectToRoute('admin.livres.index');
+        }
+
         // Vérifie si le livre existe, sinon redirige avec un message d'erreur
         if (!$livre instanceof Livre) {
             $this->addFlash('error', 'Livre non trouvé');

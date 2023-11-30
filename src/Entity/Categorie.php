@@ -20,7 +20,7 @@ class Categorie
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank]
     #[Assert\Length(
-        min: 4,
+        min: 2,
         max: 255,
         minMessage: 'Le nom doit faire au moins {{ limit }} caractères',
         maxMessage: 'Le nom doit faire moins de {{ limit }} caractères'

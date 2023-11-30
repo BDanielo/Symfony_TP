@@ -46,7 +46,7 @@ class __TwigTemplate_e4945fa7e32faa932b738fadb349e6bc extends Template
             <i class=\"bi bi-calendar-range-fill\"></i>
             ";
         // line 5
-        echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["livre"]) || array_key_exists("livre", $context) ? $context["livre"] : (function () { throw new RuntimeError('Variable "livre" does not exist.', 5, $this->source); })()), "datePublication", [], "any", false, false, false, 5), "full", "none"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatDateTime($this->env, twig_get_attribute($this->env, $this->source, (isset($context["livre"]) || array_key_exists("livre", $context) ? $context["livre"] : (function () { throw new RuntimeError('Variable "livre" does not exist.', 5, $this->source); })()), "datePublication", [], "any", false, false, false, 5), "full", "none", "", null, "gregorian", "fr"), "html", null, true);
         echo "
         </p>
         <a href=\"";
@@ -76,38 +76,55 @@ class __TwigTemplate_e4945fa7e32faa932b738fadb349e6bc extends Template
             // line 15
             echo "                <!-- Ajout du lien pour chaque catégorie -->
                 <span class=\"badge bg-secondary p-2\">
-                                <a href=\"";
+                            ";
             // line 17
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app.categories.show", ["id" => twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 17)]), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 17), "html", null, true);
-            echo "</a>
-                            </span>
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "request", [], "any", false, false, false, 17), "get", ["_route"], "method", false, false, false, 17) == "admin.livres.index")) {
+                // line 18
+                echo "                                <a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.categories.update", ["id" => twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 18)]), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 18), "html", null, true);
+                echo "</a>
+                            ";
+            } else {
+                // line 20
+                echo "                                <a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app.categories.show", ["id" => twig_get_attribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 20)]), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categorie"], "nom", [], "any", false, false, false, 20), "html", null, true);
+                echo "</a>
+                            ";
+            }
+            // line 22
+            echo "                </span>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['categorie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 20
+        // line 24
         echo "        </div>
         ";
-        // line 21
-        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "request", [], "any", false, false, false, 21), "get", ["_route"], "method", false, false, false, 21) == "admin.livres.index")) {
-            // line 22
+        // line 25
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 25, $this->source); })()), "request", [], "any", false, false, false, 25), "get", ["_route"], "method", false, false, false, 25) == "admin.livres.index")) {
+            // line 26
             echo "            <div class=\"d-flex justify-content-between align-items-center\">
                 <a href=\"";
-            // line 23
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.livres.update", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["livre"]) || array_key_exists("livre", $context) ? $context["livre"] : (function () { throw new RuntimeError('Variable "livre" does not exist.', 23, $this->source); })()), "id", [], "any", false, false, false, 23)]), "html", null, true);
+            // line 27
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.livres.update", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["livre"]) || array_key_exists("livre", $context) ? $context["livre"] : (function () { throw new RuntimeError('Variable "livre" does not exist.', 27, $this->source); })()), "id", [], "any", false, false, false, 27)]), "html", null, true);
             echo "\" class=\"btn btn-warning\">
                     <i class=\"bi bi-pencil-square\"></i>
                     Modifier
                 </a>
-";
-            // line 28
+                ";
+            // line 31
+            $this->loadTemplate("Backend/Livre/_deleteForm.html.twig", "Components/_card.html.twig", 31)->display($context);
+            // line 32
             echo "            </div>
+
         ";
         }
-        // line 30
+        // line 35
         echo "    </div>
 </div>";
         
@@ -139,7 +156,7 @@ class __TwigTemplate_e4945fa7e32faa932b738fadb349e6bc extends Template
      */
     public function getDebugInfo()
     {
-        return array (  111 => 30,  107 => 28,  100 => 23,  97 => 22,  95 => 21,  92 => 20,  81 => 17,  77 => 15,  73 => 14,  68 => 12,  63 => 10,  58 => 8,  54 => 7,  49 => 5,  43 => 1,);
+        return array (  128 => 35,  123 => 32,  121 => 31,  114 => 27,  111 => 26,  109 => 25,  106 => 24,  99 => 22,  91 => 20,  83 => 18,  81 => 17,  77 => 15,  73 => 14,  68 => 12,  63 => 10,  58 => 8,  54 => 7,  49 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -148,7 +165,7 @@ class __TwigTemplate_e4945fa7e32faa932b738fadb349e6bc extends Template
     <div class=\"blog-card-content\">
         <p class=\"blog-card-content-date\">
             <i class=\"bi bi-calendar-range-fill\"></i>
-            {{ livre.datePublication|format_datetime('full', 'none') }}
+            {{ livre.datePublication|format_datetime('full', 'none', locale='fr') }}
         </p>
         <a href=\"{{ path('app.livres.show', {id: livre.id}) }}\">
             <h2 class=\"blog-card-content-header\">{{ livre.titre }}</h2>
@@ -160,8 +177,12 @@ class __TwigTemplate_e4945fa7e32faa932b738fadb349e6bc extends Template
             {% for categorie in livre.categories %}
                 <!-- Ajout du lien pour chaque catégorie -->
                 <span class=\"badge bg-secondary p-2\">
+                            {% if app.request.get('_route') == 'admin.livres.index' %}
+                                <a href=\"{{ path('admin.categories.update', {id: categorie.id}) }}\">{{ categorie.nom }}</a>
+                            {% else %}
                                 <a href=\"{{ path('app.categories.show', {id: categorie.id}) }}\">{{ categorie.nom }}</a>
-                            </span>
+                            {% endif %}
+                </span>
             {% endfor %}
         </div>
         {% if app.request.get('_route') == 'admin.livres.index' %}
@@ -170,8 +191,9 @@ class __TwigTemplate_e4945fa7e32faa932b738fadb349e6bc extends Template
                     <i class=\"bi bi-pencil-square\"></i>
                     Modifier
                 </a>
-{#                {% include 'Backend/Livre/_deleteForm.html.twig' %}#}
+                {% include 'Backend/Livre/_deleteForm.html.twig' %}
             </div>
+
         {% endif %}
     </div>
 </div>", "Components/_card.html.twig", "/home/danielo/Documents/dev/GitTpNote/templates/Components/_card.html.twig");

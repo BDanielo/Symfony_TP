@@ -106,6 +106,12 @@ class CategorieController extends AbstractController
     #[Route('/{id}/delete', name: '.delete', methods: ['POST'])]
     public function delete(Categorie $categorie, Request $request): RedirectResponse
     {
+        // Vérifie si le token CSRF est valide, sinon redirige avec un message d'erreur
+        if (!$this->isCsrfTokenValid('delete' . $categorie->getId(), $request->request->get('token'))) {
+            $this->addFlash('error', 'Jeton CSRF invalide');
+            return $this->redirectToRoute('admin.categories.index');
+        }
+
         // Vérifie si la catégorie existe, sinon redirige avec un message d'erreur
         if (!$categorie instanceof Categorie) {
             $this->addFlash('error', 'Catégorie non trouvée');

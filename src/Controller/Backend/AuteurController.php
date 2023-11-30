@@ -106,6 +106,12 @@ class AuteurController extends AbstractController
     #[Route('/{id}/delete', name: '.delete', methods: ['POST'])]
     public function delete(Auteur $auteur, Request $request): RedirectResponse
     {
+        // Vérifie si le token CSRF est valide, sinon redirige avec un message d'erreur
+        if (!$this->isCsrfTokenValid('delete' . $auteur->getId(), $request->request->get('token'))) {
+            $this->addFlash('error', 'Jeton CSRF invalide');
+            return $this->redirectToRoute('admin.auteur.index');
+        }
+
         // Vérifie si l'auteur existe, sinon redirige avec un message d'erreur
         if (!$auteur instanceof Auteur) {
             $this->addFlash('error', 'Auteur non trouvée');
